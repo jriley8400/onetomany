@@ -6,6 +6,7 @@ class BookmarksController < ApplicationController
 
   def show
     @bookmark = Bookmark.find_by(id: params[:id])
+    @user = User.find_by(id: @bookmark.user_id)
   end
 
   def new
@@ -17,7 +18,6 @@ class BookmarksController < ApplicationController
     @bookmark.url = params[:url]
     @bookmark.description = params[:description]
     @bookmark.user_id = params[:user_id]
-    @bookmark.user = params[:user]
 
     if @bookmark.save
       redirect_to "/bookmarks/#{ @bookmark.id }"
@@ -36,7 +36,6 @@ class BookmarksController < ApplicationController
     @bookmark.url = params[:url]
     @bookmark.description = params[:description]
     @bookmark.user_id = params[:user_id]
-    @bookmark.user = params[:user]
 
     if @bookmark.save
       redirect_to "/bookmarks/#{ @bookmark.id }"

@@ -13,11 +13,7 @@
   <p><%= @bookmark.description %></p>
 </div>
 <div>
-  <strong>User ID</strong>:<br />
-  <p><%= @bookmark.user_id %></p>
-</div>
-<div class="details">
-  <div><strong>User:</strong> <%= @bookmark.user %></div>
+  <div><strong>User:</strong> <%= @user.name %></div>
 </div>
 <button><a href="/bookmarks">Back</a></button>
 <button><a href="/bookmarks/<%= @bookmark.id %>/edit">Edit</a></button> 
