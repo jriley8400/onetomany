@@ -8,6 +8,13 @@
   <strong>Email</strong>:<br />
   <p><%= @user.email %></p>
 </div>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+<li>
+  <%= bookmark.name %>
+</li>
+  <% end %>
+</ul>
 <button><a href="/users">Back</a> </button>
 <button><a href="/users/<%= @user.id %>/edit">Edit</a></button> 
 <button><a href="/users/<%= @user.id %>/destroy">Destroy</a></button>
